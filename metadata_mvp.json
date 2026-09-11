@@ -1,0 +1,103 @@
+{
+  "asset_type": "view",
+  "view": {
+    "name": "r00250_bbt_view_BABITSPK",
+    "schema": "db2601_dev_report_powerbi",
+    "fully_qualified_name": "db2601_dev_report_powerbi.r00250_bbt_view_BABITSPK"
+  },
+  "source_objects": [
+    "db1103_prod_raw_dms.CRM_xts_newvehiclewholesaleorder",
+    "db1102_prod_raw_dnet.SPKFaktur",
+    "db1102_prod_raw_dnet.SPKHeader",
+    "db1102_prod_raw_dnet.SPKCustomer",
+    "db1102_prod_raw_dnet.SAPCustomer",
+    "db1102_prod_raw_dnet.salesmanheader",
+    "db1102_prod_raw_dnet.dealer",
+    "db1102_prod_raw_dnet.EndCustomer",
+    "db2105_dev_dealership_prc.DeliveryOrderUnit",
+    "db1101_prod_raw_sap.Tr_RetailSales",
+    "db1102_prod_raw_dnet.StandardCode",
+    "db1100_prod_raw_master.r00020_rsa_table_MasterVehicle_Excel",
+    "db1100_prod_raw_master.r00020_rsa_table_MasterDealer_Excel",
+    "db1102_prod_raw_dnet.ProfileDetail",
+    "db2106_dev_dealership_prd.ProductLevelDetail",
+    "db1102_prod_raw_dnet.SPKDetail"
+  ],
+  "columns": [
+    "Campaign Name",
+    "Status",
+    "Lead Status",
+    "State Code",
+    "Lead Status Code Desc",
+    "Flag",
+    "DnetID",
+    "Dealer Code",
+    "Dealer Code 2",
+    "Dealer Name",
+    "Dealer Group",
+    "SourceCamp Susp",
+    "SourceCamp SPK",
+    "SPK No",
+    "SPK Status",
+    "Rejected Reason",
+    "Chassis Number",
+    "SPK Date / Faktur Date",
+    "CustomerName",
+    "CustomerType",
+    "Model Code",
+    "Model",
+    "Model Name",
+    "Quantity",
+    "Vehicle Class",
+    "Campaign Code",
+    "Created Time",
+    "Last Modified",
+    "Campaign Status",
+    "Validation Date",
+    "CustomerBusiness"
+  ],
+  "mapping_summary": [
+    {
+      "type": "MAP",
+      "value": "VechileType.VechileTypeCode",
+      "function_code": "B-UI01-04",
+      "source_file": "ETLM_B-UI01-01_ProductHierarki_V2"
+    },
+    {
+      "type": "MAP",
+      "value": "VechileType",
+      "function_code": "B-UI01-04",
+      "source_file": "ETLM_B-UI01-01_ProductHierarki_V2"
+    },
+    {
+      "type": "MAP",
+      "value": "VechileType.ID",
+      "function_code": "B-UI01-04",
+      "source_file": "ETLM_B-UI01-01_ProductHierarki_V2"
+    },
+    {
+      "type": "MAP",
+      "value": "VechileType.RowStatus = IsActive/IsDeleted",
+      "function_code": "B-UI01-04",
+      "source_file": "ETLM_B-UI01-01_ProductHierarki_V2"
+    },
+    {
+      "type": "MAP",
+      "value": "ChassisMaster.ChassisNumber",
+      "function_code": "C-UI05-02",
+      "source_file": "ETLM_PurchasingManagement_DeliveryOrderSchedule"
+    },
+    {
+      "type": "MAP",
+      "value": "ChassisMaster",
+      "function_code": "C-UI05-02",
+      "source_file": "ETLM_PurchasingManagement_DeliveryOrderSchedule"
+    }
+  ],
+  "notes": {
+    "purpose": "MVP metadata for OpenMetadata POC",
+    "relationships_excluded": true,
+    "source": "Azure DevOps SQL view definition",
+    "data_content_included": false
+  }
+}
